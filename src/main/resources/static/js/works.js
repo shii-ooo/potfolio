@@ -17,11 +17,17 @@ fetch("/api/works")
 
             imageElement.appendChild(img);
 
+            const linkElement = document.createElement("a");
+            linkElement.href = work.github_url;
+            linkElement.rel = "noopener noreferrer";
+
             const titleElement = document.createElement("p");
             titleElement.textContent = work.title;
 
-            workElement.appendChild(imageElement);
-            workElement.appendChild(titleElement);
+            linkElement.appendChild(imageElement);
+            linkElement.appendChild(titleElement);
+
+            workElement.appendChild(linkElement);
 
             worksList.appendChild(workElement);
         });
