@@ -1,8 +1,11 @@
 
-fetch("/api/works")
+const worksList = document.querySelector("#worksList");
+
+const apiUrl = worksList.dataset.api;
+
+fetch(apiUrl)
     .then(response => response.json())
     .then(works => {
-        const worksList = document.querySelector("#worksList");
 
         works.forEach(work => {
             const workElement = document.createElement("div");

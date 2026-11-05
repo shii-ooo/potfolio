@@ -24,6 +24,11 @@ public class WorkController { // リクエストを受け取り、処理を依�
         return workRepository.findAll();
     }
 
+    @GetMapping("/api/works/all")
+    public List<Map<String, Object>> getAllWorks() {
+        return workRepository.findAll(true);
+    }
+
     @PostMapping("/api/works/save-image")
     public String saveImage() throws java.io.IOException {
         String imagePath = "C:\\javasrc\\ShioneHp\\potfolio\\src\\main\\resources\\static\\images\\todo.png";
@@ -32,7 +37,8 @@ public class WorkController { // リクエストを受け取り、処理を依�
 
         return result + "件の作品を保存しました";
 
-        //ターミナルでInvoke-RestMethod -Method Post -Uri "http://localhost:8080/api/works/save-image" を実行して保存
+        // ターミナルでInvoke-RestMethod -Method Post -Uri
+        // "http://localhost:8080/api/works/save-image" を実行して保存
     }
 
     @GetMapping("/api/works/{id}/image")

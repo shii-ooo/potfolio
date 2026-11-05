@@ -24,10 +24,10 @@ public class WorkRepository { // SQLを実行してDBから取り出す
     }
 
     public List<Map<String, Object>> findAll(boolean all) {
-    String sql = "SELECT id, title, description, github_url FROM works ORDER BY id DESC";
+        String sql = "SELECT id, title, description, github_url FROM works ORDER BY id DESC";
 
-    return jdbcTemplate.queryForList(sql);
-}
+        return jdbcTemplate.queryForList(sql);
+    }
 
     public int saveImage(String title, String imagePath) throws java.io.IOException {
 
